@@ -1,0 +1,119 @@
+# EdgePulse-Pi5 Configuration File
+
+# System Settings
+system:
+  measurement_interval: 1  # Seconds between readings
+  log_level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  
+# Database Settings
+database:
+  path: data/edgepulse.db
+  backup_enabled: true
+  backup_interval: 86400  # Daily backup (seconds)
+  retention_days: 30  # Days to keep old data
+
+# Sensor Configuration
+sensors:
+  # MAX30102 Pulse Oximeter & Heart Rate Sensor
+  max30102:
+    enabled: true
+    red_led_current: 24  # 0-255 (mA)
+    ir_led_current: 24   # 0-255 (mA)
+    sample_rate: 100     # Samples per second
+    pulse_width: 411     # ADC resolution (69, 118, 215, 411 µs)
+  
+  # DS18B20 Temperature Sensor
+  ds18b20:
+    enabled: true
+    calibration_offset: 0.0  # Temperature offset (°C)
+  
+  # Status Indicators (LEDs and Buzzer)
+  indicators:
+    led_red_pin: 22      # GPIO pin for red LED
+    led_green_pin: 27    # GPIO pin for green LED
+    led_blue_pin: 23     # GPIO pin for blue LED
+    buzzer_pin: 17       # GPIO pin for buzzer
+
+# Vital Sign Thresholds
+thresholds:
+  # Heart Rate Thresholds (bpm)
+  heart_rate:
+    min: 60              # Bradycardia warning
+    max: 100             # Tachycardia warning
+    critical_min: 40     # Critical bradycardia
+    critical_max: 150    # Critical tachycardia
+  
+  # Blood Oxygen Saturation Thresholds (%)
+  spo2:
+    min: 95              # Low SpO2 warning
+    critical_min: 90     # Critical hypoxemia
+  
+  # Body Temperature Thresholds (°C)
+  temperature:
+    min: 36.1            # Low temperature warning
+    max: 37.8            # Fever warning
+    critical_min: 35.0   # Critical hypothermia
+    critical_max: 39.0   # Critical hyperthermia
+
+# Alert Configuration
+alerts:
+  # Email Alerts
+  email:
+    enabled: false
+    smtp_server: smtp.gmail.com
+    smtp_port: 587
+    username: your-email@gmail.com
+    password: your-app-password  # Use app-specific password for Gmail
+    recipient: alert-recipient@gmail.com
+    from_address: edgepulse-pi5@example.com
+  
+  # SMS Alerts (Twilio)
+  sms:
+    enabled: false
+    provider: twilio
+    account_sid: your-twilio-account-sid
+    auth_token: your-twilio-auth-token
+    from_number: +1234567890
+    to_number: +0987654321
+  
+  # Local Alerts (Buzzer & LEDs)
+  local:
+    buzzer_enabled: true
+    led_enabled: true
+    
+  # Alert Cooldown (seconds)
+  cooldown: 300  # 5 minutes between similar alerts
+
+# Web Dashboard
+web_dashboard:
+  enabled: true
+  host: 0.0.0.0        # Listen on all interfaces
+  port: 5000
+  debug: false
+  auto_refresh: 2000   # Milliseconds
+
+# Data Export
+export:
+  auto_export: false
+  export_interval: 86400  # Daily export (seconds)
+  export_path: data/exports/
+  format: csv
+
+# Advanced Features
+advanced:
+  # Machine Learning (future feature)
+  ml_enabled: false
+  
+  # Multi-user support (future feature)
+  multi_user: false
+  
+  # Cloud sync (future feature)
+  cloud_sync: false
+
+# Logging Configuration
+logging:
+  log_to_file: true
+  log_file: logs/edgepulse.log
+  max_file_size: 10485760  # 10MB
+  backup_count: 5
+  log_to_console: true
