@@ -1,8 +1,7 @@
-# EdgePulse-Pi5 🏥
+# Edge Pulse Pi5 🏥
 
 A Raspberry Pi 5–based real-time health monitoring system that performs on-device analysis of vital signs such as heart rate, SpO₂, and body temperature. It detects abnormal patterns locally using edge-computing principles, enabling instant alerts without cloud dependency for low-latency healthcare environments.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.9+-green.svg)
 ![Platform](https://img.shields.io/badge/platform-Raspberry%20Pi%205-red.svg)
 
