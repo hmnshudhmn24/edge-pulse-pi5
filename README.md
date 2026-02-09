@@ -427,38 +427,3 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## ⚠️ Disclaimer
-
-**IMPORTANT**: This system is designed for educational and monitoring purposes only. It is NOT a certified medical device and should NOT be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical decisions.
-
-## 🙏 Acknowledgments
-
-- MAX30102 sensor library contributors
-- Raspberry Pi Foundation
-- Open-source community
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/edgepulse-pi5/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/edgepulse-pi5/discussions)
-- **Email**: support@edgepulse.example.com
-
-## 🗺️ Roadmap
-
-- [ ] Mobile app integration
-- [ ] Machine learning for predictive analytics
-- [ ] Multi-patient support
-- [ ] Integration with hospital systems (HL7/FHIR)
-- [ ] Advanced arrhythmia detection
-- [ ] Sleep monitoring features
-- [ ] Stress level analysis
-
----
-
-Made with ❤️ for better healthcare accessibility
